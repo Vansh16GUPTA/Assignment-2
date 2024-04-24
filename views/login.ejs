@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - AirWays</title>
+    <!-- Your CSS styles here -->
+</head>
+<body>
+    <header>
+        <h1>Login - AirWays</h1>
+        <!-- Toggle button -->
+        <div class="toggle-button" onclick="toggleSidebar()">
+            <!-- Your toggle button HTML -->
+        </div>
+    </header>
+
+    <div class="sidebar">
+        <!-- Your sidebar links -->
+    </div>
+
+    <div class="content">
+        <section>
+            <div class="form-container">
+                <h2>Login</h2>
+                <!-- Modified form with action and method attributes -->
+                <form action="/login" method="post">
+                    <div class="form-fieldset">
+                        <label class="form-label" for="username">Username:</label><br>
+                        <input type="text" id="username" name="username" class="form-input"><br>
+                    </div>
+                    <div class="form-fieldset">
+                        <label class="form-label" for="password">Password:</label><br>
+                        <input type="password" id="password" name="password" class="form-input"><br>
+                    </div>
+                    <input type="submit" class="form-submit" value="Login">
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            // Your toggleSidebar function
+        }
+    </script>
+</body>
+</html>

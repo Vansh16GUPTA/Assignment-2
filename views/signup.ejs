@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - AirWays</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden; 
+            background-image: url('airline2.avif');
+            background-size: cover; 
+        }
+
+        header {
+            background-color: transparent; 
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            background-color: transparent;
+            position: fixed;
+            top: 0;
+            left: -250px; 
+            overflow-x: hidden;
+            padding-top: 60px;
+            z-index: 1;
+            transition: 0.5s; 
+        }
+
+        .sidebar a {
+            padding: 10px;
+            text-decoration: none;
+            font-size: 28px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: rgb(46, 112, 160);
+        }
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            transition: 0.5s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: transparent; 
+            border-radius: 10px;
+            box-shadow: transparent; 
+            width: 400px;
+            text-align: center;
+        }
+
+        .form-fieldset {
+            border: 0px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        .form-submit {
+            background-color: #0c3953;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .form-submit:hover {
+            background-color: #072539;
+        }
+
+        .toggle-button {
+            position: absolute;
+            top: 30px;
+            left: 40px;
+            cursor: pointer;
+        }
+
+        .line {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .sidebar {
+                width: 150px;
+            }
+            .content {
+                margin-left: 0; 
+            }
+            header {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sign Up - AirWays</h1>
+        <!-- Toggle button -->
+        <div class="toggle-button" onclick="toggleSidebar()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </header>
+
+    <div class="sidebar">
+        <a href="/index">Home</a>
+        <a href="/bookflight">Book Flight</a>
+        <a href="/mybooking">My Bookings</a>
+        <a href="/login">Login</a>
+        <a href="/signup">Sign Up</a>
+        <a href="/services">Services</a>
+    </div>
+
+    <div class="content">
+        <section>
+            <div class="form-container">
+                <h2>Sign Up</h2>
+                <form action="/signup" method="post">
+                    <div class="form-fieldset">
+                        <label class="form-label" for="username">Username:</label><br>
+                        <input type="text" id="username" name="username" class="form-input"><br>
+                    </div>
+                    <div class="form-fieldset">
+                        <label class="form-label" for="password">Password:</label><br>
+                        <input type="password" id="password" name="password" class="form-input"><br>
+                    </div>
+                    <input type="submit" class="form-submit" value="Sign Up">
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.querySelector('.sidebar');
+            var content = document.querySelector('.content');
+            if (sidebar.style.left === "0px") {
+                sidebar.style.left = "-250px";
+                content.style.marginLeft = "0";
+            } else {
+                sidebar.style.left = "0px";
+                content.style.marginLeft = "250px";
+            }
+        }
+    </script>
+</body>
+</html>
